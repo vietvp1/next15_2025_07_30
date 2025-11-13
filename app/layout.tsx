@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Input from "@/components/Input";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
+  abcd,
   children,
 }: Readonly<{
   children: React.ReactNode;
+  abcd: React.ReactNode;
 }>) {
   // const response = await fetch("http://localhost:8080/messages", {
   //   next: {
@@ -33,6 +36,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {abcd}
         {children}
       </body>
     </html>
